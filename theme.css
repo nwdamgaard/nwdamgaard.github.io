@@ -1,0 +1,47 @@
+body {
+    display: block;
+}
+
+
+#bottom-part {
+    height: 90%;
+    width: 100%;
+    vertical-align: middle;
+    
+}
+
+div {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+#top-part {
+    display: block;
+}
+
+
+#names {
+    float: right;
+}
+
+.name {
+    display: block;
+}
+
+.entry {
+    width: 24%;
+    height: 100%;
+    vertical-align: middle;
+    align-content: center;
+    align-items: center;
+}
+
+.header {
+    padding-top: 100%;
+    vertical-align: middle;
+    text-align: center;
+    font-weight: bold;
+    font-size: 750%;
+    width: 100%;
+    height: 50%;
+}
