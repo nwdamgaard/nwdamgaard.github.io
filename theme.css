@@ -43,3 +43,9 @@ div {
 #bibliography-link {
     align-self: center;
 }
+
+#top-part-right-side {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
