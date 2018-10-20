@@ -4,8 +4,10 @@ body {
 
 
 #bottom-part {
-    
-    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }
 
 div {
