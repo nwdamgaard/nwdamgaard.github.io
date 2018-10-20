@@ -23,9 +23,19 @@ body {
     border-bottom-style: solid;
     border-bottom-color: black;
     border-bottom-width: 1px;
+
+    padding: 10px;
+}
+
+#title-text {
+    font-size: 200%;
 }
 
 .header {
     font-weight: bold;
     font-size: 750%;
+}
+
+div {
+    font-family: Arial, Helvetica, sans-serif;
 }
