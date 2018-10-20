@@ -42,10 +42,26 @@ div {
 
 #bibliography-link {
     align-self: center;
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 5px;
+
+    padding: 5px;
+
+    background-color: black;
+}
+
+a {
+    color: white;
+    text-decoration: none;
 }
 
 #top-part-right-side {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+
+    width: 15%;
 }
