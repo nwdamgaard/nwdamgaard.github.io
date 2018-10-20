@@ -1,31 +1,28 @@
 body {
-    display: block;
+    
 }
 
 
 #bottom-part {
-    height: 90%;
-    width: 100%;
-    vertical-align: middle;
+    
     
 }
 
 div {
-    vertical-align: middle;
-    display: inline-block;
+    
 }
 
 #top-part {
-    display: block;
+    
 }
 
 
 #names {
-    float: right;
+    
 }
 
 .name {
-    display: block;
+    
 }
 
 .entry {
