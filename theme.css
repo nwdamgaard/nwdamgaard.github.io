@@ -14,27 +14,10 @@ body {
     margin-bottom: auto;
 }
 
-div {
-    
-}
-
 #top-part {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
-
-
-#names {
-    
-}
-
-.name {
-    
-}
-
-.entry {
-    
 }
 
 .header {
