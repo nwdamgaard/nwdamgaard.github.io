@@ -39,3 +39,7 @@ body {
 div {
     font-family: Arial, Helvetica, sans-serif;
 }
+
+#bibliography-link {
+    align-self: center;
+}
