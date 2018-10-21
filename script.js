@@ -5,50 +5,30 @@ var entry3 = document.getElementById("entry-three");
 var entry4 = document.getElementById("entry-four");
 
 function clickEntry1 () {
-    playAnimation(entry2);
-    playAnimation(entry3);
-    playAnimation(entry4);
-
-    setTimeout(function() {
-        entry2.style.display = "none";
-        entry3.style.display = "none";
-        entry4.style.display = "none";
-    }, 800);
+    disappear([entry2, entry3, entry4]);
 }
 
 function clickEntry2 () {
-    playAnimation(entry1);
-    playAnimation(entry3);
-    playAnimation(entry4);
-
-    setTimeout(function() {
-        entry1.style.display = "none";
-        entry3.style.display = "none";
-        entry4.style.display = "none";
-    }, 800);
+    disappear([entry1, entry3, entry4]);
 }
 
 function clickEntry3 () {
-    playAnimation(entry1);
-    playAnimation(entry2);
-    playAnimation(entry4);
-
-    setTimeout(function() {
-        entry1.style.display = "none";
-        entry2.style.display = "none";
-        entry4.style.display = "none";
-    }, 800);
+    disappear([entry1, entry2, entry4]);
 }
 
 function clickEntry4 () {
-    playAnimation(entry2);
-    playAnimation(entry3);
-    playAnimation(entry1);
+    disappear([entry1, entry2, entry3]);
+}
+
+function disappear(entries) {
+    for(var i = 0; i < entries.length; i++) {
+        playAnimation(entries[i]);
+    }
 
     setTimeout(function() {
-        entry2.style.display = "none";
-        entry3.style.display = "none";
-        entry1.style.display = "none";
+        for(var i = 0; i < entries.length; i++) {
+            entries[i].style.display = "none";
+        }
     }, 800);
 }
 
