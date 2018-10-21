@@ -119,9 +119,11 @@ a {
 
     50% {
         transform: translateY(-200%);
+        
     }
 
     100% {
+        transform: translateY(-200%);
         
     }
 }
