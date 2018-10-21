@@ -102,3 +102,17 @@ a {
         opacity: 0;
     }
 }
+
+@keyframes moveToTopLeftCorner {
+    0% {
+        align-self: center;
+    }
+
+    50% {
+        align-self: flex-start;
+    }
+
+    100% {
+
+    }
+}
