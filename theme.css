@@ -114,14 +114,14 @@ a {
 
 @keyframes moveToTopLeftCorner {
     0% {
-        align-self: center;
+        transform: translateY(0);
     }
 
     50% {
-        align-self: flex-start;
+        transform: translateY(-200%);
     }
 
     100% {
-
+        
     }
 }
