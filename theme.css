@@ -82,14 +82,23 @@ a {
     justify-content: space-around;
 
     background-color: black;
+
+    -webkit-animation-name: disappear;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-play-state: paused;
+    animation-name: disappear;
+    animation-duration: 1s;
+    animation-play-state: paused;
+
+    opacity: 100;
 }
 
 @keyframes disappear {
     0% {
-        opacity: 0%;
+        opacity: 100;
     }
 
     100% {
-        opacity: 100%;
+        opacity: 0;
     }
 }
