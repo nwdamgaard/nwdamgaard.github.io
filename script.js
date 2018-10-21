@@ -5,7 +5,7 @@ var entry3 = document.getElementById("entry-three");
 var entry4 = document.getElementById("entry-four");
 
 function clickEntry1 () {
-
+    
 }
 
 function clickEntry2 () {
