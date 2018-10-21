@@ -25,6 +25,7 @@ function disappear(entries, clickedEntry) {
         playAnimation(entries[i], "running");
     }
 
+    clickedEntry.classList.add("entryToTopLeft");
     playAnimation(clickedEntry, "running");
 
     setTimeout(function() {
