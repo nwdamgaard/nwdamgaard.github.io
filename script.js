@@ -5,25 +5,27 @@ var entry3 = document.getElementById("entry-three");
 var entry4 = document.getElementById("entry-four");
 
 function clickEntry1 () {
-    disappear([entry2, entry3, entry4]);
+    disappear([entry2, entry3, entry4], entry1);
 }
 
 function clickEntry2 () {
-    disappear([entry1, entry3, entry4]);
+    disappear([entry1, entry3, entry4], entry2);
 }
 
 function clickEntry3 () {
-    disappear([entry1, entry2, entry4]);
+    disappear([entry1, entry2, entry4], entry3);
 }
 
 function clickEntry4 () {
-    disappear([entry1, entry2, entry3]);
+    disappear([entry1, entry2, entry3], entry4);
 }
 
-function disappear(entries) {
+function disappear(entries, clickedEntry) {
     for(var i = 0; i < entries.length; i++) {
-        playAnimation(entries[i]);
+        playAnimation(entries[i], "running");
     }
+
+    playAnimation(clickedEntry, "running");
 
     setTimeout(function() {
         for(var i = 0; i < entries.length; i++) {
@@ -32,7 +34,7 @@ function disappear(entries) {
     }, 800);
 }
 
-function playAnimation(entry) {
-    entry.style.webkitAnimationPlayState = "running";
-    entry.style.animationPlayState = "running";
+function playAnimation(entry, state) {
+    entry.style.webkitAnimationPlayState = state;
+    entry.style.animationPlayState = state;
 }
