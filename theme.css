@@ -34,6 +34,8 @@ body {
 .header {
     font-weight: bold;
     font-size: 750%;
+
+    color: white;
 }
 
 div {
@@ -64,4 +66,20 @@ a {
     justify-content: space-around;
 
     width: 15%;
+}
+
+.entry {
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+
+    padding: 10px;
+    width: 150px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    background-color: black;
 }
