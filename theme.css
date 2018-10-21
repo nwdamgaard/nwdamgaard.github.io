@@ -93,6 +93,15 @@ a {
     opacity: 100;
 }
 
+.entryToTopLeft {
+    -webkit-animation-name: moveToTopLeftCorner;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-play-state: paused;
+    animation-name: moveToTopLeftCorner;
+    animation-duration: 1s;
+    animation-play-state: paused;
+}
+
 @keyframes disappear {
     0% {
         opacity: 100;
