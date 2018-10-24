@@ -28,12 +28,33 @@ function disappear(entries, clickedEntry) {
     clickedEntry.classList.add("entryToTopLeft");
     playAnimation(clickedEntry, "running");
 
+    FLIP(clickedEntry);
+
     setTimeout(function() {
         for(var i = 0; i < entries.length; i++) {
             entries[i].style.display = "none";
         }
     }, 800);
 }
+
+function FLIP(clickedEntry) {
+    var first = cumulativeOffset(clickedEntry);
+    clickedEntry.classList.add("clickedEntry");
+};
+
+var cumulativeOffset = function(element) {
+    var top = 0, left = 0;
+    do {
+        top += element.offsetTop  || 0;
+        left += element.offsetLeft || 0;
+        element = element.offsetParent;
+    } while(element);
+
+    return {
+        top: top,
+        left: left
+    };
+};
 
 function playAnimation(entry, state) {
     entry.style.webkitAnimationPlayState = state;
