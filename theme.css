@@ -102,6 +102,10 @@ a {
     animation-play-state: paused;
 }
 
+.clickedEntry {
+    
+}
+
 @keyframes disappear {
     0% {
         opacity: 100;
