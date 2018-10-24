@@ -114,16 +114,16 @@ a {
 
 @keyframes moveToTopLeftCorner {
     0% {
-        transform: translateY(0);
+        
     }
 
     50% {
-        transform: translateY(-200%);
+        
         
     }
 
     100% {
-        transform: translateY(-200%);
+        
         
     }
 }
