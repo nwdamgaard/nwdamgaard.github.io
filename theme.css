@@ -128,7 +128,12 @@ a {
 }
 
 .entry-paragraph {
-    display: none;
+    opacity: 0%;
+
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 @keyframes disappear {
