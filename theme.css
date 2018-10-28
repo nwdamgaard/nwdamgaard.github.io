@@ -128,7 +128,7 @@ a {
 }
 
 .entry-paragraph {
-    opacity: 0%;
+    opacity: 0;
 
     position: fixed;
     left: 50%;
@@ -156,10 +156,10 @@ a {
 
 @keyframes appear {
     0% {
-        opacity: 100;
+        opacity: 0;
     }
 
     100% {
-        opacity: 0;
+        opacity: 100%;
     }
 }
