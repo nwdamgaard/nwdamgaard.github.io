@@ -29,6 +29,8 @@ function disappear(entries, clickedEntry) {
     playAnimation(clickedEntry, "running");
 
     FLIP(entries, clickedEntry);
+    var entryBody = document.getElementById(clickedEntry.id + "-body");
+    playAnimation(entryBody);
 
     setTimeout(function() {
         for(var i = 0; i < entries.length; i++) {
