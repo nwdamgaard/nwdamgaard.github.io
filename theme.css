@@ -128,8 +128,6 @@ a {
 }
 
 .entry-paragraph {
-    opacity: 0;
-
     position: fixed;
     left: 50%;
     top: 50%;
@@ -160,6 +158,6 @@ a {
     }
 
     100% {
-        opacity: 100%;
+        opacity: 100;
     }
 }

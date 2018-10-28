@@ -30,7 +30,7 @@ function disappear(entries, clickedEntry) {
 
     FLIP(entries, clickedEntry);
     var entryBody = document.getElementById(clickedEntry.id + "-body");
-    playAnimation(entryBody);
+    playAnimation(entryBody, "running");
 
     setTimeout(function() {
         for(var i = 0; i < entries.length; i++) {
