@@ -132,6 +132,8 @@ a {
 }
 
 .entry-paragraph {
+    display: none;
+
     position: fixed;
     left: 50%;
     top: 50%;
