@@ -37,11 +37,17 @@ function disappear(entries, clickedEntry) {
     }, 800);
 }
 
-function freezePosition(element) {
-    var offset = cumulativeOffset(element);
-    element.style.position = "absolute";
-    element.style.left = offset.left;
-    element.style.top = offset.top;
+function freezePositions(elements) {
+    var offsets = [];
+    for(var i = 0; i < elements.length; i++) {
+        offsets.push(cumulativeOffset(elements[i]));
+    }
+
+    for(var i = 0; i < elements.length; i++) {
+        elements[i].style.position = "absolute";
+        elements[i].style.top = offsets[i].top;
+        elements[i].style.left = offsets[i].left;
+    }
 }
 
 function FLIP(entries, clickedEntry) {
