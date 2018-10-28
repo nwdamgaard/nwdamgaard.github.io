@@ -38,7 +38,10 @@ function disappear(entries, clickedEntry) {
 }
 
 function FLIP(clickedEntry) {
+    //first
     var first = cumulativeOffset(clickedEntry);
+
+    //last
     var bottomPart = document.getElementById("bottom-part");
     bottomPart.className = "bottom-part-clicked-entry";
     var last = cumulativeOffset(clickedEntry);
@@ -47,9 +50,13 @@ function FLIP(clickedEntry) {
                     left: first.left - last.left};
     var transform = "translate(" + offset.left + ", " + offset.top + ")";
     console.log(offset);
+    
+    //invert
     clickedEntry.style.position = "absolute";
     clickedEntry.style.left = first.left;
     clickedEntry.style.top = first.top;
+
+    //play
     var id = setInterval(moveClickedEntry, 10);
     var currentOffset = {left: first.left, top: first.top};
     function moveClickedEntry() {
