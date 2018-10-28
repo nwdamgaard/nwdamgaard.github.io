@@ -39,6 +39,29 @@ function disappear(entries, clickedEntry) {
 
 function FLIP(clickedEntry) {
     var first = cumulativeOffset(clickedEntry);
+    var bottomPart = document.getElementById("bottom-part");
+    bottomPart.className = "bottom-part-clicked-entry";
+    var last = cumulativeOffset(clickedEntry);
+    bottomPart.className = "bottom-part-entry-list";
+    var offset = {top: first.top - last.top,
+                    left: first.left - last.left};
+    var transform = "translate(" + offset.left + ", " + offset.top + ")";
+    console.log(offset);
+    clickedEntry.style.position = "absolute";
+    clickedEntry.style.left = first.left;
+    clickedEntry.style.top = first.top;
+    var id = setInterval(moveClickedEntry, 10);
+    var currentOffset = {left: first.left, top: first.top};
+    function moveClickedEntry() {
+        if(clickedEntry.style.left == last.left && clickedEntry.style.top == last.top) {
+            clearInterval(id);
+        } else {
+            currentOffset.top -= offset.top;
+            currentOffset.left -= offset.left;
+            clickedEntry.style.left = currentOffset.left;
+            clickedEntry.style.top = currentOffset.top;
+        }
+    }
     clickedEntry.classList.add("clickedEntry");
 };
 

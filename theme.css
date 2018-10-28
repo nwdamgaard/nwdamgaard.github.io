@@ -6,13 +6,20 @@ body {
 }
 
 
-#bottom-part {
+.bottom-part-entry-list {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     margin-top: auto;
     margin-bottom: auto;
+}
+
+.bottom-part-show-entry {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 #top-part {
@@ -116,8 +123,6 @@ a {
     justify-content: space-around;
 
     background-color: black;
-
-    align-self: flex-start;
 
     opacity: 100;
 }
