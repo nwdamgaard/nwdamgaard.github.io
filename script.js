@@ -62,19 +62,25 @@ function FLIP(entries, clickedEntry) {
     clickedEntry.style.top = first.top;
 
     //play
-    var id = setInterval(moveClickedEntry, 10);
+    var id = setInterval(moveClickedEntryUp, 10);
     var currentOffset = {left: first.left, top: first.top};
-    function moveClickedEntry() {
+    function moveClickedEntryUp() {
+        if(currentOffset.top <= last.top) {
+            clearInterval(id);
+            id = setInterval(moveClickedEntryOver, 10);
+        } else {
+            var newPos = currentOffset.top - (offset.top / 100);
+            clickedEntry.style.top = newPos;
+            currentOffset.top = newPos;
+        }
+    }
+    function moveClickedEntryOver() {
         if(currentOffset.left <= last.left) {
             clearInterval(id);
         } else {
-            var newPos = {
-                left: currentOffset.left - (offset.left / 100),
-                top: currentOffset.top - (offset.top / 100)
-            }
-            clickedEntry.style.left = newPos.left;
-            clickedEntry.style.top = newPos.top;
-            currentOffset = newPos;
+            var newPos = currentOffset.left - (offset.left / 100);
+            clickedEntry.style.left = newPos;
+            currentOffset.left = newPos;
         }
     }
     clickedEntry.classList.add("clickedEntry");
