@@ -127,6 +127,10 @@ a {
     opacity: 100;
 }
 
+.entry-paragraph {
+    display: none;
+}
+
 @keyframes disappear {
     0% {
         opacity: 100;
