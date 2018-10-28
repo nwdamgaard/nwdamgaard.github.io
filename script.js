@@ -37,6 +37,13 @@ function disappear(entries, clickedEntry) {
     }, 800);
 }
 
+function freezePosition(element) {
+    var offset = cumulativeOffset(element);
+    element.style.position = "absolute";
+    element.style.left = offset.left;
+    element.style.top = offset.top;
+}
+
 function FLIP(entries, clickedEntry) {
     //first
     var first = cumulativeOffset(clickedEntry);
