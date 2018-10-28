@@ -69,6 +69,8 @@ function FLIP(entries, clickedEntry) {
                     left: first.left - last.left};
     var transform = "translate(" + offset.left + ", " + offset.top + ")";
     
+    freezePositions(entries);
+
     //invert
     clickedEntry.style.position = "absolute";
     clickedEntry.style.left = first.left;
