@@ -28,7 +28,7 @@ function disappear(entries, clickedEntry) {
     clickedEntry.classList.add("entryToTopLeft");
     playAnimation(clickedEntry, "running");
 
-    FLIP(clickedEntry);
+    FLIP(entries, clickedEntry);
 
     setTimeout(function() {
         for(var i = 0; i < entries.length; i++) {
@@ -37,19 +37,24 @@ function disappear(entries, clickedEntry) {
     }, 800);
 }
 
-function FLIP(clickedEntry) {
+function FLIP(entries, clickedEntry) {
     //first
     var first = cumulativeOffset(clickedEntry);
 
     //last
+    for(var i = 0; i < entries.length; i++) {
+        entries[i].style.display = "none";
+    }
     var bottomPart = document.getElementById("bottom-part");
     bottomPart.className = "bottom-part-clicked-entry";
     var last = cumulativeOffset(clickedEntry);
     bottomPart.className = "bottom-part-entry-list";
+    for(var i = 0; i < entries.length; i++) {
+        entries[i].style.display = "inherit";
+    }
     var offset = {top: first.top - last.top,
                     left: first.left - last.left};
     var transform = "translate(" + offset.left + ", " + offset.top + ")";
-    console.log(offset);
     
     //invert
     clickedEntry.style.position = "absolute";
@@ -60,13 +65,16 @@ function FLIP(clickedEntry) {
     var id = setInterval(moveClickedEntry, 10);
     var currentOffset = {left: first.left, top: first.top};
     function moveClickedEntry() {
-        if(clickedEntry.style.left == last.left && clickedEntry.style.top == last.top) {
+        if(currentOffset.left <= last.left) {
             clearInterval(id);
         } else {
-            currentOffset.top -= offset.top;
-            currentOffset.left -= offset.left;
-            clickedEntry.style.left = currentOffset.left;
-            clickedEntry.style.top = currentOffset.top;
+            var newPos = {
+                left: currentOffset.left - (offset.left / 100),
+                top: currentOffset.top - (offset.top / 100)
+            }
+            clickedEntry.style.left = newPos.left;
+            clickedEntry.style.top = newPos.top;
+            currentOffset = newPos;
         }
     }
     clickedEntry.classList.add("clickedEntry");
