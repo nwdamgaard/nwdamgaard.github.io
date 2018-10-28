@@ -29,8 +29,6 @@ function disappear(entries, clickedEntry) {
     playAnimation(clickedEntry, "running");
 
     FLIP(entries, clickedEntry);
-    var entryBody = document.getElementById(clickedEntry.id + "-body");
-    playAnimation(entryBody, "running");
 
     setTimeout(function() {
         for(var i = 0; i < entries.length; i++) {
@@ -85,6 +83,8 @@ function FLIP(entries, clickedEntry) {
         if(currentOffset.top <= last.top) {
             clearInterval(id);
             id = setInterval(moveClickedEntryOver, 10);
+            var entryBody = document.getElementById(clickedEntry.id + "-body");
+            playAnimation(entryBody, "running");
         } else {
             var newPos = currentOffset.top - (offset.top / 100);
             clickedEntry.style.top = newPos;
