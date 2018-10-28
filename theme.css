@@ -18,8 +18,12 @@ body {
 .bottom-part-show-entry {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: inherit;
+    align-items: inherit;
+}
+
+#bottom-part {
+    padding: 20px;
 }
 
 #top-part {
