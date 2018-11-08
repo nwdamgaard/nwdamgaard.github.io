@@ -66,6 +66,19 @@ div {
     background-color: black;
 }
 
+.button {
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 5px;
+
+    padding: 5px;
+
+    background-color: black;
+
+    color: white;
+}
+
 a {
     color: white;
     text-decoration: none;
@@ -146,6 +159,13 @@ a {
     -webkit-animation-name: appear;
     -webkit-animation-duration: 1s;
     -webkit-animation-play-state: paused;
+}
+
+#back-button {
+    display: none;
+    margin: 10px;
+    margin-top: 0px;
+    margin-bottom: auto;
 }
 
 @keyframes disappear {
