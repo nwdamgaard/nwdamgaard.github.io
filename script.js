@@ -3,6 +3,7 @@ var entry1 = document.getElementById("entry-one");
 var entry2 = document.getElementById("entry-two");
 var entry3 = document.getElementById("entry-three");
 var entry4 = document.getElementById("entry-four");
+
 var state = {
     param1: null,
     param2: null
@@ -99,7 +100,7 @@ function reverseFLIP(entries, clickedEntry) {
     function moveClickedEntryOver() {
         if(currentOffset.left >= last.left) {
             clearInterval(id);
-            setInterval(moveClickedEntryDown, 10);
+            id = setInterval(moveClickedEntryDown, 10);
             
             for(var i = 0; i < entries.length; i++) {
                 var entry = entries[i];
@@ -127,6 +128,7 @@ function reverseFLIP(entries, clickedEntry) {
             for(var i = 0; i < entries.length; i++) {
                 entries[i].style = null;
             }
+            window.location.reload(false);
         } else {
             var newPos = currentOffset.top - (offset.top / 100);
             clickedEntry.style.top = newPos;
@@ -225,4 +227,19 @@ function setAnimationDirectionReverse(entry) {
 
 function backToEntryList() {
     reappear(state.param1, state.param2);
+}
+
+function replaceWithEntry(entry) {
+    var newEntry;
+    if(entry.id == "entry-one") {
+        newEntry = entry1.cloneNode(true);
+    } else if(entry.id == "entry-two") {
+        newEntry = entry2.cloneNode(true);
+    } else if(entry.id == "entry-three") {
+        newEntry = entry3.cloneNode(true);
+    } else if(entry.id == "entry-four") {
+        newEntry = entry4.cloneNode(true);
+    }
+
+    entry.parentNode.replaceChild(newEntry, entry);
 }
