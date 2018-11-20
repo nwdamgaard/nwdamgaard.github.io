@@ -168,6 +168,12 @@ a {
     margin-bottom: auto;
 }
 
+.paragraph-header {
+    display: block;
+    font-size: 150%;
+    text-shadow: 1px 1px gray;
+}
+
 @keyframes disappear {
     0% {
         opacity: 100;

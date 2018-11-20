@@ -178,7 +178,7 @@ function FLIP(entries, clickedEntry) {
             id = setInterval(moveClickedEntryOver, 10);
             var entryBody = document.getElementById(clickedEntry.id + "-body");
             playAnimation(entryBody, "running");
-            entryBody.style.display = "inherit";
+            entryBody.style.display = "block";
         } else {
             var newPos = currentOffset.top - (offset.top / 100);
             clickedEntry.style.top = newPos;
